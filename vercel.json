@@ -5,11 +5,5 @@
       "source": "/(.*)",
       "destination": "/api/index"
     }
-  ],
-  "functions": {
-    "api/**/*.py": {
-      "maxDuration": 60,
-      "excludeFiles": "{tests/**,__tests__/**,**/*.test.py,**/test_*.py,fixtures/**,__fixtures__/**,testdata/**,sample-data/**,static/**,assets/**,__pycache__/**}"
-    }
-  }
+  ]
 }
