@@ -5,6 +5,6 @@
   },
   "deploy": {
     "numReplicas": 1,
-    "startCommand": "gunicorn image_converter_flask:app"
+    "startCommand": "gunicorn image_converter_flask:app --bind 0.0.0.0:$PORT"
   }
 }
