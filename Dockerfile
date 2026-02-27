@@ -15,8 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY image_converter_flask.py .
 COPY . .
 
-# Expose port (Railway will set PORT env var)
+# Expose port
 EXPOSE 5000
 
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "--workers", "1", "--threads", "2", "image_converter_flask:app"]
+# Run the application with proper PORT expansion
+CMD gunicorn --bind 0.0.0.0:${PORT:-5000} --workers 1 --threads 2 --timeout 120 image_converter_flask:app
